@@ -45,42 +45,22 @@ const Accomplishments = () => {
                     <div className="about-heading">My Accomplishments</div>
                 </div>
 
-                <div className="timeline-container">
-                    <motion.div
-                        className="timeline-line"
-                        initial={{ height: 0 }}
-                        whileInView={{ height: '100%' }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                    ></motion.div>
-
+                <div className="accomplishments-list" style={{ display: 'flex', flexDirection: 'column', gap: '30px', maxWidth: '800px', margin: '0 auto' }}>
                     {accomplishments.map((item, index) => {
-                        const isEven = index % 2 === 0;
                         return (
-                            <div key={index} className={`timeline-row ${isEven ? 'timeline-row-left' : 'timeline-row-right'}`}>
-
-                                <motion.div
-                                    className="timeline-card"
-                                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ duration: 0.6, delay: 0.2 }}
-                                >
-                                    <div className="timeline-date">{item.year}</div>
-                                    <div className="timeline-title">{item.title}</div>
-                                    <p>{item.desc}</p>
-                                </motion.div>
-
-                                <motion.div
-                                    className="timeline-dot"
-                                    initial={{ scale: 0 }}
-                                    whileInView={{ scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: 0.4 }}
-                                >
-                                    {item.icon}
-                                </motion.div>
-                            </div>
+                            <motion.div
+                                key={index}
+                                className="timeline-card"
+                                style={{ width: '100%' }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.5, delay: 0.1 * index }}
+                            >
+                                <div className="timeline-date">{item.year}</div>
+                                <div className="timeline-title">{item.title}</div>
+                                <p>{item.desc}</p>
+                            </motion.div>
                         );
                     })}
                 </div>
