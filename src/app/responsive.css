@@ -152,11 +152,27 @@
         font-weight: 500;
     }
 
+    .timeline-line {
+        display: none;
+    }
+
+    .timeline-dot {
+        display: none;
+    }
+
+    .timeline-row {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    .timeline-card {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
     .mobile-menu-drawer {
-        right: -50px;
+        right: 0;
     }
 
     .hero-main {

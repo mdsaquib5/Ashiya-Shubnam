@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Contact = () => {
     return (
-        <section id="contact" className="contact-section">
+        <section id="consultation" className="contact-section">
             <div className="container">
                 <motion.div
                     className="contact-card"
